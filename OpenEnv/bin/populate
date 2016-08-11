@@ -1,0 +1,19 @@
+#! /usr/bin/env perl
+
+use strict;
+use warnings;
+
+use Moo;
+use lib 'lib';
+
+has 'ic6s_schema' => ( is => 'ro', );
+
+package main;
+use Dancer2;
+use Dancer2::Plugin::Interchange6;
+
+set logger        => 'console';
+set logger_format => '%m';
+
+my $schema = shop_schema;
+$schema->deploy( { add_drop_table => 1 } );

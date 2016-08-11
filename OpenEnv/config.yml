@@ -75,11 +75,7 @@ plugins:
         users_password_check: check_password
   DBIC:
     default:
-      dsn: dbi:Pg:dbname=openenv
+      user: openenv
       schema_class: OpenEnv::Schema
-      options:
-        on_connect_do: 'SET client_min_messages=WARNING;'
-        pg_enable_utf8: 1
-        quote_names: 1
 
 
