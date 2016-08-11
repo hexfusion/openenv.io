@@ -11,7 +11,7 @@ environments/development.yml
 bin/app.psgi
 t/002_index_route.t
 t/001_base.t
-lib/Openenv.pm
+lib/OpenEnv.pm
 public/favicon.ico
 public/dispatch.fcgi
 public/500.html
