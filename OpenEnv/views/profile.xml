@@ -1,0 +1,13 @@
+<specification>
+  <container name="has_talks" value="has_talks"/>
+  <value name="conference_name"/>
+  <list name="profile" iterator="profile_nav">
+    <param name="name" class="link"/>
+    <param name="link" field="uri" target="href" op="append"/>
+  </list>
+  <list name="talk" iterator="talks">
+    <param name="title" class="talk-link"/>
+    <param name="talk-link" field="talks_id" target="href" op="append"/>
+    <param name="accepted" op="toggle" args="tree"/>
+  </list>
+</specification>

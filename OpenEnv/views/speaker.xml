@@ -1,0 +1,49 @@
+<specification>
+
+  <container name="has_nickname" value="user.nickname"/>
+  <container name="has_company" value="user.company"/>
+  <container name="has_city" value="user.addresses.first.city"/>
+  <container name="has_country" value="user.addresses.first.country"/>
+  <container name="has_pause_id" value="user.pause_id"/>
+  <container name="has_talks" value="talks"/>
+  <container name="has_previous_talks" value="previous_talks.has_rows"/>
+  <container name="has_monger_groups" value="user.monger_groups"/>
+  <container name="show-stars" value="logged_in_user"/>
+
+  <value name="name" field="user.name"/>
+  <value name="nickname" field="user.nickname"/>
+  <value name="company" field="user.addresses.first.company"/>
+  <value name="city" field="user.addresses.first.city"/>
+  <value name="country" field="user.addresses.first.country.name"/>
+  <value name="photo" target="src" field="user.photo_uri"/>
+  <value name="bio" field="user.bio" op="hook" filter="markdown"/>
+  <value name="pause_id" field="user.pause_id"/>
+  <value name="pause_link" class="pause_id" field="user.pause_id" target="href"
+    op="append"/>
+
+  <value name="monger_groups" field="user.monger_groups" filter="monger_groups"
+    op="hook"/>
+
+  <list name="talks" iterator="talks">
+    <container name="remove_talk" value="attendee_status"/>
+    <container name="add_talk" value="!attendee_status"/>
+    <param name="picked" field="id" target="href" op="append"/>
+    <param name="unpicked" field="id" target="href" op="append"/>
+    <param name="talk-link" target="href" op="append" field="seo_uri"/>
+    <param name="title" class="talk-link"/>
+    <param name="start_time" filter="date_only"/>
+    <param name="duration_display"/>
+    <param name="location" field="room"/>
+    <param name="short_abstract"/>
+  </list>
+  <container name="attending-talks" value="attending.count"/>
+  <list name="attending" iterator="attending">
+    <param name="title" class="link"/>
+    <param name="seo_uri" class="link" target="href" op="append"/>
+  </list>
+  <list name="previous_talks" iterator="previous_talks">
+    <param name="talk-link" target="href" op="append" field="seo_uri"/>
+    <param name="title" class="talk-link"/>
+    <param name="conference" field="conference.name"/>
+  </list>
+</specification>

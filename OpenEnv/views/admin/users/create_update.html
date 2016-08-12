@@ -1,0 +1,143 @@
+  <form class="form-horizontal" method="post" name="update_create_users">
+    <input type="hidden" name="users_id">
+
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <a class="btn btn-default" href="/admin/users">User List</a>
+      </div>
+    </div>
+
+    <div class="form-group email_input">
+      <label for="inputEmail" class="col-sm-2 control-label">Email</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="inputEmail" name="email" required placeholder="Email">
+        <div class="help-block first_name_error"></div>
+        <div class="help-block">This is also the username</div>
+      </div>
+    </div> 
+
+    <div class="form-group first_name_input">
+      <label for="inputFirstName" class="col-sm-2 control-label">First Name</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="inputFirstName" name="first_name" required placeholder="First Name">
+        <div class="help-block first_name_error"></div>
+      </div>
+    </div> 
+
+
+        <div class="form-group last_name_input">
+          <label for="inputLastName" class="col-sm-2 control-label">Last Name</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="inputLastName" name="last_name" placeholder="Last Name">
+            <div class="help-block last_name_error"></div>
+          </div>
+        </div>
+
+        <div class="form-group nickname_input">
+          <label for="inputNickname" class="col-sm-2 control-label">Nickname</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="inputNickname" name="nickname" placeholder="Nickname">
+            <div class="help-block nickname_error"></div>
+          </div>
+        </div>
+
+        <div class="form-group company_input">
+          <label for="inputCompany" class="col-sm-2 control-label">Company</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="inputCompany" name="company" placeholder="Company">
+            <div class="help-block company_error"></div>
+          </div>
+        </div>
+
+        <div class="form-group city_input">
+          <label for="inputCity" class="col-sm-2 control-label">City</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="inputCity" name="city" placeholder="City">
+            <div class="help-block city_error"></div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="inputState" class="col-sm-2 control-label">State</label>
+          <div class="col-sm-10">
+            <select name="state" class="state form-control" id="inputState" name="states_id"></select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="inputCountry" class="col-sm-2 control-label">Country</label>
+          <div class="col-sm-10">
+            <select name="country" class="country form-control" id="inputCountry" name="country_iso_code"></select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <button id="geocode" class="btn btn-primary">Geocode City/Country</button>
+          </div>
+        </div>
+
+        <div class="form-group latitude">
+          <label for="inputLatitude" class="col-sm-2 control-label">Latitude</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="inputLatitude" name="latitude" placeholder="Latitude">
+            <div class="help-block latitude"></div>
+          </div>
+        </div>
+
+        <div class="form-group longitude_input">
+          <label for="inputLongitude" class="col-sm-2 control-label">Longitude</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="inputLongitude" name="longitude" placeholder="Longitude">
+            <div class="help-block longitude_error"></div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-2 control-label">T-shirt size</label>
+          <div class="col-sm-10">
+            <select name="t_shirt_size" class="t_shirt_size form-control"></select>
+          </div>
+        </div>
+
+        <div class="form-group monger_groups_input">
+          <label for="inputMongerGroups" class="col-sm-2 control-label">Monger Groups</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="inputMongerGroups" name="monger_groups" placeholder="Monger Groups">
+            <div class="help-block monger_groups_error"></div>
+            <div class="help-block">City.pm, drinkers.pm, etc</div>
+          </div>
+        </div>
+
+        <div class="form-group pause_id_input">
+          <label for="inputPauseId" class="col-sm-2 control-label">PAUSE id</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="inputPauseId" name="pause_id" placeholder="PauseId">
+            <div class="help-block pause_id_error"></div>
+          </div>
+        </div>
+
+        <div class="form-group guru_level_input">
+          <label class="col-sm-2 control-label">Guru level</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" name="guru_level">
+            <div class="help-block guru_level_error"></div>
+          </div>
+        </div>
+
+        <div class="form-group bio_input">
+          <label for="inputBio" class="col-sm-2 control-label">Bio</label>
+          <div class="col-sm-10">
+            <textarea rows="4" class="form-control" id="inputBio" name="bio" placeholder="Short bio"></textarea>
+            <div class="help-block bio_error"></div>
+          </div>
+        </div>
+
+
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-primary submit">Submit</button>
+      </div>
+    </div>
+
+  </form>

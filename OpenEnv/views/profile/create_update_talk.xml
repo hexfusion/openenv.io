@@ -1,0 +1,35 @@
+<specification>
+
+  <value name="title"/>
+
+  <form name="create-update-talk" link="name">
+    <field name="title"/>
+    <field name="abstract"/>
+    <field name="tags"/>
+    <field name="duration" iterator="durations"/>
+    <field name="url"/>
+    <field name="comments"/>
+    <field name="confirmed"/>
+  </form>
+
+  <container name="accepted" value="accepted"/>
+  <container name="is_confirmed" value="confirmed"/>
+  <container name="not_confirmed" value="!confirmed"/>
+
+  <value name="title_input" field="data.css.title" target="class"
+    op="append" joiner=" "/>
+  <value name="title_error" field="data.errors.title"/>
+
+  <value name="abstract_input" field="data.css.abstract" target="class"
+    op="append" joiner=" "/>
+  <value name="abstract_error" field="data.errors.abstract"/>
+
+  <value name="tags_input" field="data.css.tags" target="class"
+    op="append" joiner=" "/>
+  <value name="tags_error" field="data.errors.tags"/>
+
+  <value name="duration_input" field="data.css.duration" target="class"
+    op="append" joiner=" "/>
+  <value name="duration_error" field="data.errors.duration"/>
+
+</specification>

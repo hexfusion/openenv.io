@@ -1,0 +1,13 @@
+<specification>
+  <list name="news-item" iterator="news">
+    <container name="has_uri" value="uri">
+      <param name="uri" class="title" target="href" op="append"/>
+    </container>
+    <container name="no_uri" value="!uri"/>
+    <param name="title"/>
+    <param name="author" field="author.name"/>
+    <param name="created" filter="date_only"/>
+    <param name="content" filter="markdown" op="hook"/>
+  </list>
+  <container name="all-news" value="old_news|vars.uri"/>
+</specification>

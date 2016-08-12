@@ -1,0 +1,17 @@
+<specification>
+  <list name="users-item" iterator="users">
+    <param name="username"/>
+    <param name="guru_level"/>
+    <param name="nickname"/>
+    <param name="first_name" class="first-name"/>
+    <param name="last_name" class="last-name"/>
+    <param name="attendee" field="conferences_attended.first.conferences_id" filter="boolean"/>
+    <param name="confirmed" field="conferences_attended.first.confirmed" filter="boolean"/>
+    <param name="edit" field="users_id" target="href" op="append"/>
+    <param name="delete" field="users_id" target="href" op="append"/>
+    <list name="role" iterator="user_roles">
+      <param name="name" field="role.label"/>
+      <separator name="sep"/>
+    </list>
+  </list>
+</specification>

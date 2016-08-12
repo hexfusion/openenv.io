@@ -1,0 +1,127 @@
+<link rel='stylesheet' href='/css/jquery.treetable.css' type='text/css'>
+<link rel='stylesheet' href='/css/jquery.treetable.theme.default.css' type='text/css'>
+
+  <div class="btn-group" role="group">
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#createModal">Create Parent</a>
+    <button class="btn btn-default" id="expand">Expand All</button>
+    <button class="btn btn-default" id="collapse">Collapse All</button>
+  </div>
+
+  <div class="table-responsive">
+    <table class="treetable">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Scope</th>
+          <th>URI</th>
+          <th>Description</th>
+          <th>Alias</th>
+          <th>Priority</th>
+          <th>Active</th>
+          <th>Edit</th>
+          <th>Delete</th>
+          <th>Child</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="nav-item parent">
+          <td><span class="name folder"></span></td>
+          <td class="type"></td>
+          <td class="scope"></td>
+          <td class="uri"></td>
+          <td class="description"></td>
+          <td class="alias"></td>
+          <td class="priority"></td>
+          <td class="isactive"></td>
+          <td><a class="edit" href="#" data-toggle="modal" data-target="#createModal"><i class="fa fa-edit"></i></a></td>
+          <td><a class="delete" href="/admin/navigation/delete/"><i class="fa fa-trash"></i></a></td>
+          <td><a class="create" href="#" data-toggle="modal" data-target="#createModal"><i class="fa fa-plus-square"></i></a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="modal fade" id="createModal" tabindex="-1" role="dialog" aria-labelledby="createLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="createLabel">Create Navigation Item</h4>
+      </div>
+      <div class="modal-body">
+        <form class="form-horizontal" method="post">
+
+          <input type="hidden" name="navigation_id">
+          <input type="hidden" name="parent_id">
+
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Type</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" name="type">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Scope</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" name="scope">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Name</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" name="name">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-sm-2 control-label">URI</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" name="uri">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Description</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" name="description">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Alias</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" name="alias">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Priority</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" name="priority">
+            </div>
+          </div>
+
+          <div class="form-group">
+              <label class="col-sm-2 control-label">Active</label>
+              <div class="col-sm-10">
+                  <label class="radio-inline">
+                      <input type="radio" name="active" class="isactive" value="1">Yes
+                  </label>
+                  <label class="radio-inline">
+                      <input type="radio" name="active" class="inactive" value="0">No
+                  </label>
+              </div>
+          </div>
+
+          <div class="btn-group" role="group">
+            <button id="#submit" type="submit" class="btn btn-primary">Submit</a>
+            <button type="button" class="btn btn-default" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">Cancel</span></button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>

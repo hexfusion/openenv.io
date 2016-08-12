@@ -1,0 +1,23 @@
+<specification>
+  <form name="update_create_users" link="name">
+    <field name="email"/>
+    <field name="first_name"/>
+    <field name="guru_level"/>
+    <field name="last_name"/>
+    <field name="nickname"/>
+    <field name="company"/>
+    <field name="city"/>
+    <field name="state"/>
+    <field name="latitude"/>
+    <field name="longitude"/>
+    <field name="country" iterator="countries"
+      iterator_value_key="country_iso_code" iterator_name_key="name"/>
+    <field name="t_shirt_size" iterator="t_shirt_sizes"/>
+    <field name="monger_groups"/>
+    <field name="pause_id"/>
+    <field name="bio"/>
+  </form>
+
+  <value name="data-state" class="state" field="state" target="data-state"/>
+
+</specification>

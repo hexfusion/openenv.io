@@ -1,0 +1,29 @@
+  <div class="row text-center tickets-container equal-height-container">
+    <div class="col-sm-6 tickets equal-height-column">
+      <div class="ticket-header">
+        <div class="short_description">Ticket name</div>
+        <div class="price">0.00</div>
+        <div class="ticket-left-container">
+          Only <span class="tickets_left">9999</span> tickets left
+        </div>
+        <div class="sold-out">
+          No longer available
+        </div>
+      </div>
+      <div class="description ticket-content">Ticket description</div>
+      <form action="/cart" method="post">
+        <input type="hidden" class="sku" name="sku">
+        <!--button type="submit" class="btn btn-primary">Book Now</button-->
+        <div class="ticket-left-container">
+          <a href="/register" class="btn btn-primary buy-ticket">Buy Now</a>
+        </div>
+        <div class="sold-out">
+          <button class="btn btn-primary buy-ticket" disabled="disabled">No longer available</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="well not-avail">
+      <p>Tickets are not yet available for this year's conference.</p>
+  </div>

@@ -1,0 +1,64 @@
+<specification>
+  <container name="show-stars" value="logged_in_user"/>
+  <container name="show-unscheduled-events" value="unscheduled_events"/>
+  <container name="show-unscheduled-talks" value="unscheduled_talks"/>
+  <container name="has_rows" value="rows"/>
+  <container name="no_rows" value="!rows"/>
+  <pattern name="durationpat" type="string">10</pattern>
+  <pattern name="nicknamepat" type="string">NickName</pattern>
+  <list name="nav_day" iterator="days">
+    <param name="uri" class="link" target="href"/>
+    <param name="class" class="nav_day" target="class" op="append" joiner=" "/>
+    <param name="label" class="link"/>
+  </list>
+  <value name="date" filter="date_only"/>
+  <list name="room-name" iterator="rooms">
+    <param name="name"/>
+  </list>
+  <list name="timeslot" iterator="rows">
+    <param name="time"/>
+    <list name="slot" iterator="slots">
+      <container name="remove_talk" value="attendee_status"/>
+      <container name="add_talk" value="!attendee_status"/>
+      <param name="picked" field="id" target="href" op="append"/>
+      <param name="unpicked" field="id" target="href" op="append"/>
+      <param name="rowspan" class="slot" target="rowspan"/>
+      <param name="is_talk" field="author_name" op="toggle" args="tree"/>
+      <param name="is_event" op="toggle" args="tree"/>
+      <param name="is_empty" op="toggle" args="tree"/>
+      <param name="author_name"/>
+      <param name="author_nickname" op="toggle" args="tree"
+        pattern="nicknamepat"/>
+      <param name="author_uri" target="href" op="append"/>
+      <param name="title"/>
+      <param name="talk-uri" class="title" field="uri"
+        target="href" op="append"/>
+      <param name="class" class="slot" target="class" op="append" joiner=" "/>
+      <param name="duration" pattern="durationpat"/>
+      <param name="has_slides" field="url" op="toggle" args="tree"/>
+      <param name="url" target="href"/>
+      <param name="has_video" field="video_url" op="toggle" args="tree"/>
+      <param name="video_url" target="href"/>
+      <param name="stars"/>
+    </list>
+  </list>
+  <list name="unscheduled_event" iterator="unscheduled_events">
+    <param name="title"/>
+    <param name="event-uri" class="title" field="seo_uri" target="href"
+      op="append"/>
+    <param name="duration"/>
+    <param name="start_time" filter="date"/>
+    <param name="room"/>
+  </list>
+  <list name="unscheduled_talk" iterator="unscheduled_talks">
+    <param name="name" field="author.name"/>
+    <param name="nickname" field="author.nickname" pattern="nicknamepat"/>
+    <param name="uri" field="author.uri" target="href" op="append"/>
+    <param name="title"/>
+    <param name="talk-uri" class="title" field="seo_uri" target="href"
+      op="append"/>
+    <param name="duration"/>
+    <param name="start_time" filter="date"/>
+    <param name="room"/>
+  </list>
+</specification>

@@ -1,0 +1,3 @@
+<specification>
+  <value name="login-fragment" op="hook" include="fragments/login.html"/>
+</specification>

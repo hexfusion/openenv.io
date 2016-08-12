@@ -1,0 +1,43 @@
+  <div class="row">
+
+    <div class="col-md-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          Current photo
+        </div>
+        <div class="panel-body">
+          <img class="photo img-responsive" src="">
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="panel panel-default upload-panel">
+        <div class="panel-heading">
+          Upload a new photo min 300x300px, max 10MB
+        </div>
+        <div class="panel-body">
+          <form method="post">
+            <div class="form-group">
+              <input name="photo" id="photo-upload" type="file" >
+            </div>
+        </div>
+      </div>
+      <div class="panel panel-default crop-panel hidden">
+        <div class="panel-heading">
+          Please crop image
+        </div>
+        <div class="panel-body">
+          <img id="new-photo" src="">
+        </div>
+        <form action="/profile/photo/crop" method="post">
+          <input type="hidden" id="x" name="x">
+          <input type="hidden" id="y" name="y">
+          <input type="hidden" id="h" name="h">
+          <input type="hidden" id="w" name="w">
+          <button class="btn btn-primary" type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+
+  </div>
