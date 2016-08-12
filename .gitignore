@@ -1,0 +1,5 @@
+bin/
+nginx/
+pgsql/
+var/
+OpenEnv/environments/development.yml

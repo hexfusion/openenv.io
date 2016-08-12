@@ -53,7 +53,7 @@ builder {
     enable 'DBIC::QueryLog';
     enable 'Session';
     enable 'XSRFBlock',
-      cookie_name    => 'PerlDance-XSRF-Token',
+      cookie_name    => 'OpenEnv-XSRF-Token',
       meta_tag       => 'xsrf-meta',
       cookie_options => { httponly => 1, };
 
